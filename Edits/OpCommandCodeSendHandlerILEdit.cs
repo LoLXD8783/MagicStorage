@@ -7,7 +7,7 @@ using System.Linq;
 using Terraria;
 using Terraria.Audio;
 using Terraria.ID;
-using ILMain = IL.Terraria.Main;
+using Terraria.Main;
 
 namespace MagicStorage.Edits {
 	internal class OpCommandCodeSendHandlerILEdit : Edit {

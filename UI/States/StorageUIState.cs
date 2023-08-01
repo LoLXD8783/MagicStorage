@@ -145,7 +145,7 @@ namespace MagicStorage.UI.States {
 
 				depositButton = new UITextPanel<LocalizedText>(Language.GetText("Mods.MagicStorage.DepositAll"));
 
-				depositButton.OnClick += (evt, e) => {
+				depositButton.OnLeftClick += (evt, e) => {
 					bool ctrlDown = Main.keyState.IsKeyDown(Keys.LeftControl) || Main.keyState.IsKeyDown(Keys.RightControl);
 					if (StorageGUI.TryDepositAll(ctrlDown == MagicStorageConfig.QuickStackDepositMode)) {
 						StorageGUI.SetRefresh();
@@ -299,7 +299,7 @@ namespace MagicStorage.UI.States {
 			protected override float GetSearchBarRight() => depositButtonRight + CraftingGUI.Padding;
 
 			protected override void InitZoneSlotEvents(MagicStorageItemSlot itemSlot) {
-				itemSlot.OnClick += (evt, e) => {
+				itemSlot.OnLeftClick += (evt, e) => {
 					// Prevent actions while refreshing the items
 					if (StorageGUI.CurrentlyRefreshing)
 						return;
@@ -411,7 +411,7 @@ namespace MagicStorage.UI.States {
 			public ControlsPage(BaseStorageUI parent) : base(parent, "Controls") {
 				OnPageSelected += () => {
 					SellMenuChoice = 0;
-					sellMenuLabels[0].Click(new(sellMenuLabels[0], UserInterface.ActiveInstance.MousePosition));
+					sellMenuLabels[0].LeftClick(new(sellMenuLabels[0], UserInterface.ActiveInstance.MousePosition));
 				};
 			}
 
@@ -516,7 +516,7 @@ namespace MagicStorage.UI.States {
 				foreach (var name in names) {
 					StorageUISellMenuToggleLabel label = new(name, index);
 
-					label.OnClick += ClickSellMenuToggle;
+					label.OnLeftClick += ClickSellMenuToggle;
 
 					label.Top.Set(height, 0f);
 					label.Height.Set(20, 0f);
@@ -531,7 +531,7 @@ namespace MagicStorage.UI.States {
 
 				UITextPanel<LocalizedText> sellMenuButton = new(Language.GetText("Mods.MagicStorage.StorageGUI.SellDuplicatesButton"));
 
-				sellMenuButton.OnClick += (evt, e) => {
+				sellMenuButton.OnLeftClick += (evt, e) => {
 					if (StoragePlayer.LocalPlayer.GetStorageHeart() is not TEStorageHeart heart)
 						return;
 
@@ -600,7 +600,7 @@ namespace MagicStorage.UI.States {
 					NetReceiveInventoryResult = netFunc
 				};
 
-				button.OnClick += static (evt, e) => SoundEngine.PlaySound(SoundID.MenuTick);
+				button.OnLeftClick += static (evt, e) => SoundEngine.PlaySound(SoundID.MenuTick);
 
 				InitButtonEvents(button);
 
@@ -610,8 +610,8 @@ namespace MagicStorage.UI.States {
 			private void InitButton(ref UITextPanel<LocalizedText> button, string localizationKey, MouseEvent evt) {
 				button = new(Language.GetText("Mods.MagicStorage." + localizationKey));
 
-				button.OnClick += static (evt, e) => SoundEngine.PlaySound(SoundID.MenuTick);
-				button.OnClick += evt;
+				button.OnLeftClick += static (evt, e) => SoundEngine.PlaySound(SoundID.MenuTick);
+				button.OnLeftClick += evt;
 
 				InitButtonEvents(button);
 

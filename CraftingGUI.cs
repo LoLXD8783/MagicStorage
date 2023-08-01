@@ -1649,7 +1649,7 @@ namespace MagicStorage
 				NetHelper.Report(true, "Spawning excess results on player...");
 
 				foreach (Item item in HandleCraftWithdrawAndDeposit(GetHeart(), context.toWithdraw, context.results))
-					Main.LocalPlayer.QuickSpawnClonedItem(new EntitySource_TileEntity(GetHeart()), item, item.stack);
+					Main.LocalPlayer.QuickSpawnItem(new EntitySource_TileEntity(GetHeart()), item, item.stack);
 
 				StorageGUI.SetRefresh();
 			} else if (Main.netMode == NetmodeID.MultiplayerClient) {

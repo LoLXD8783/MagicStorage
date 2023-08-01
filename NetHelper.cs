@@ -807,7 +807,7 @@ namespace MagicStorage
 				Item item  = ItemIO.Receive(reader, true, true);
 				var  heart = StoragePlayer.LocalPlayer.GetStorageHeart();
 
-				player.QuickSpawnClonedItem(new EntitySource_TileEntity(heart), item, item.stack);
+				player.QuickSpawnItem(new EntitySource_TileEntity(heart), item, item.stack);
 			}
 
 			Report(true, MessageType.CraftResult + " packet received by client " + Main.myPlayer);

@@ -7,7 +7,7 @@ using SerousCommonLib.API;
 using System;
 using Terraria;
 using Terraria.ID;
-using ILPlayer = IL.Terraria.Player;
+using Terraria.Player;
 
 namespace MagicStorage.Edits;
 

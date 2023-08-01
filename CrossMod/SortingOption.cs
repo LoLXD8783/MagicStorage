@@ -14,7 +14,7 @@ namespace MagicStorage.CrossMod {
 	public abstract partial class SortingOption : ModTexturedType {
 		public int Type { get; private set; }
 
-		public ModTranslation Tooltip { get; private set; }
+		public LocalizedText Tooltip { get; private set; }
 
 		public Asset<Texture2D> TextureAsset => ModContent.Request<Texture2D>(Texture);
 
@@ -38,7 +38,7 @@ namespace MagicStorage.CrossMod {
 
 			Type = SortingOptionLoader.Add(this);
 
-			Tooltip = LocalizationLoader.GetOrCreateTranslation(Mod, $"SortingOption.{Name}");
+			Tooltip = Language.GetOrRegister(Mod, $"SortingOption.{Name}");
 		}
 
 		public sealed override void SetupContent() {
@@ -51,7 +51,7 @@ namespace MagicStorage.CrossMod {
 		/// </summary>
 		public virtual void AutoStaticDefaults() {
 			if (Tooltip.IsDefault())
-				Tooltip.SetDefault(Regex.Replace(Name, "([A-Z])", " $1").Trim());
+				// Tooltip.SetDefault(Regex.Replace(Name, "([A-Z])", " $1").Trim());
 		}
 
 		public bool Visible { get; private set; } = true;

@@ -5,8 +5,8 @@ using SerousCommonLib.API;
 using System;
 using System.Reflection;
 using Terraria;
+using Terraria.Chest;
 using Terraria.ID;
-using ILChest = IL.Terraria.Chest;
 
 namespace MagicStorage.Edits {
 	internal class QuickStackChestILEdit : Edit {
