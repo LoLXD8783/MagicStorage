@@ -96,9 +96,9 @@ namespace MagicStorage.UI {
 			AssignButtons(textures, texts.Select(t => t.GetTranslation(Language.ActiveCulture)).ToArray());
 		}
 
-		public void AssignButtons(Asset<Texture2D>[] textures, LocalizedText[] texts) {
+		/*public void AssignButtons(Asset<Texture2D>[] textures, LocalizedText[] texts) { // tmodporter artifact?
 			AssignButtons(textures, texts.Select(t => t.Value).ToArray());
-		}
+		}*/
 
 		public void AssignButtons(Asset<Texture2D>[] textures, string[] texts) {
 			if (textures.Length != texts.Length || textures.Length == 0)
@@ -173,7 +173,7 @@ namespace MagicStorage.UI {
 			//Hack for GearIconElement
 			protected bool canInvokeAction = true;
 
-			public ChoiceElement(int option, Asset<Texture2D> texture, LocalizedText text, int buttonSize = 21) : this(option, texture, text.Value, buttonSize) { }
+			//public ChoiceElement(int option, Asset<Texture2D> texture, LocalizedText text, int buttonSize = 21) : this(option, texture, text.Value, buttonSize) { }
 
 			public ChoiceElement(int option, Asset<Texture2D> texture, LocalizedText translation, int buttonSize = 21) : this(option, texture, translation.GetTranslation(Language.ActiveCulture), buttonSize) { }
 

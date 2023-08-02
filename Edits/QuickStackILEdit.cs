@@ -6,7 +6,7 @@ using SerousCommonLib.API;
 using System.Collections.Generic;
 using Terraria;
 using Terraria.ID;
-using Terraria.Player;
+using ILPlayer = Terraria.IL_Player;
 
 namespace MagicStorage.Edits {
 	internal class QuickStackILEdit : Edit {

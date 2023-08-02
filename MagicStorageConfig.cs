@@ -11,94 +11,94 @@ using Terraria.ModLoader.Config;
 // ReSharper disable UnassignedField.Global
 
 namespace MagicStorage {
-	[Label("$Mods.MagicStorage.Config.Label")]
+	//[LabelKey("$Mods.MagicStorage.Config.Label")]
 	public class MagicStorageConfig : ModConfig
 	{
 		[Header($"$Mods.MagicStorage.Config.Headers.Storage")]
-		[Label("$Mods.MagicStorage.Config.quickStackDepositMode.Label")]
-		[Tooltip("$Mods.MagicStorage.Config.quickStackDepositMode.Tooltip")]
+		[LabelKey("$Mods.MagicStorage.Config.quickStackDepositMode.Label")]
+		[TooltipKey("$Mods.MagicStorage.Config.quickStackDepositMode.Tooltip")]
 		[DefaultValue(true)]
 		public bool quickStackDepositMode;
 
 		[Header($"$Mods.MagicStorage.Config.Headers.Crafting")]
-		[Label("$Mods.MagicStorage.Config.useConfigFilter.Label")]
-		[Tooltip("$Mods.MagicStorage.Config.useConfigFilter.Tooltip")]
+		[LabelKey("$Mods.MagicStorage.Config.useConfigFilter.Label")]
+		[TooltipKey("$Mods.MagicStorage.Config.useConfigFilter.Tooltip")]
 		[DefaultValue(true)]
 		public bool useConfigFilter;
 
-		[Label("$Mods.MagicStorage.Config.showAllRecipes.Label")]
-		[Tooltip("$Mods.MagicStorage.Config.showAllRecipes.Tooltip")]
+		[LabelKey("$Mods.MagicStorage.Config.showAllRecipes.Label")]
+		[TooltipKey("$Mods.MagicStorage.Config.showAllRecipes.Tooltip")]
 		[DefaultValue(false)]
 		public bool showAllRecipes;
 
-		[Label("$Mods.MagicStorage.Config.useOldCraftMenu.Label")]
-		[Tooltip("$Mods.MagicStorage.Config.useOldCraftMenu.Tooltip")]
+		[LabelKey("$Mods.MagicStorage.Config.useOldCraftMenu.Label")]
+		[TooltipKey("$Mods.MagicStorage.Config.useOldCraftMenu.Tooltip")]
 		[DefaultValue(false)]
 		public bool useOldCraftMenu;
 
-		[Label("$Mods.MagicStorage.Config.recipeBlacklist.Label")]
-		[Tooltip("$Mods.MagicStorage.Config.recipeBlacklist.Tooltip")]
+		[LabelKey("$Mods.MagicStorage.Config.recipeBlacklist.Label")]
+		[TooltipKey("$Mods.MagicStorage.Config.recipeBlacklist.Tooltip")]
 		[DefaultValue(false)]
 		public bool recipeBlacklist;
 
-		[Label("$Mods.MagicStorage.Config.clearHistory.Label")]
-		[Tooltip("$Mods.MagicStorage.Config.clearHistory.Tooltip")]
+		[LabelKey("$Mods.MagicStorage.Config.clearHistory.Label")]
+		[TooltipKey("$Mods.MagicStorage.Config.clearHistory.Tooltip")]
 		[DefaultValue(false)]
 		public bool clearHistory;
 
-		[Label("$Mods.MagicStorage.Config.recursionDepth.Label")]
-		[Tooltip("$Mods.MagicStorage.Config.recursionDepth.Tooltip")]
+		[LabelKey("$Mods.MagicStorage.Config.recursionDepth.Label")]
+		[TooltipKey("$Mods.MagicStorage.Config.recursionDepth.Tooltip")]
 		[DefaultValue(3)]
 		[DrawTicks]
 		[Range(-1, 10)]
 		public int recursionDepth;
 
 		[Header($"$Mods.MagicStorage.Config.Headers.StorageAndCrafting")]
-		[Label("$Mods.MagicStorage.Config.glowNewItems.Label")]
-		[Tooltip("$Mods.MagicStorage.Config.glowNewItems.Tooltip")]
+		[LabelKey("$Mods.MagicStorage.Config.glowNewItems.Label")]
+		[TooltipKey("$Mods.MagicStorage.Config.glowNewItems.Tooltip")]
 		[DefaultValue(false)]
 		public bool glowNewItems;
 
-		[Label("$Mods.MagicStorage.Config.clearSearchText.Label")]
-		[Tooltip("$Mods.MagicStorage.Config.clearSearchText.Tooltip")]
+		[LabelKey("$Mods.MagicStorage.Config.clearSearchText.Label")]
+		[TooltipKey("$Mods.MagicStorage.Config.clearSearchText.Tooltip")]
 		[DefaultValue(true)]
 		public bool clearSearchText;
 
-		[Label("$Mods.MagicStorage.Config.searchBarRefreshOnKey.Label")]
-		[Tooltip("$Mods.MagicStorage.Config.searchBarRefreshOnKey.Tooltip")]
+		[LabelKey("$Mods.MagicStorage.Config.searchBarRefreshOnKey.Label")]
+		[TooltipKey("$Mods.MagicStorage.Config.searchBarRefreshOnKey.Tooltip")]
 		[DefaultValue(true)]
 		public bool searchBarRefreshOnKey;
 
-		[Label("$Mods.MagicStorage.Config.uiFavorites.Label")]
-		[Tooltip("$Mods.MagicStorage.Config.uiFavorites.Tooltip")]
+		[LabelKey("$Mods.MagicStorage.Config.uiFavorites.Label")]
+		[TooltipKey("$Mods.MagicStorage.Config.uiFavorites.Tooltip")]
 		[DefaultValue(false)]
 		public bool uiFavorites;
 
-		[Label("$Mods.MagicStorage.Config.extraFilterIcons.Label")]
-		[Tooltip("$Mods.MagicStorage.Config.extraFilterIcons.Tooltip")]
+		[LabelKey("$Mods.MagicStorage.Config.extraFilterIcons.Label")]
+		[TooltipKey("$Mods.MagicStorage.Config.extraFilterIcons.Tooltip")]
 		[DefaultValue(true)]
 		[ReloadRequired]
 		public bool extraFilterIcons;
 
-		[Label("$Mods.MagicStorage.Config.buttonLayout.Label")]
-		[Tooltip("$Mods.MagicStorage.Config.buttonLayout.Tooltip")]
+		[LabelKey("$Mods.MagicStorage.Config.buttonLayout.Label")]
+		[TooltipKey("$Mods.MagicStorage.Config.buttonLayout.Tooltip")]
 		[DefaultValue(ButtonConfigurationMode.Legacy)]
 		[DrawTicks]
 		public ButtonConfigurationMode buttonLayout;
 
 		[Header($"$Mods.MagicStorage.Config.Headers.General")]
-		[Label("$Mods.MagicStorage.Config.allowItemDataDebug.Label")]
-		[Tooltip("$Mods.MagicStorage.Config.allowItemDataDebug.Tooltip")]
+		[LabelKey("$Mods.MagicStorage.Config.allowItemDataDebug.Label")]
+		[TooltipKey("$Mods.MagicStorage.Config.allowItemDataDebug.Tooltip")]
 		[DefaultValue(false)]
 		public bool itemDataDebug;  //Previously "allowItemDataDebug"
 
-		[Label("$Mods.MagicStorage.Config.canMovePanels.Label")]
-		[Tooltip("$Mods.MagicStorage.Config.canMovePanels.Tooltip")]
+		[LabelKey("$Mods.MagicStorage.Config.canMovePanels.Label")]
+		[TooltipKey("$Mods.MagicStorage.Config.canMovePanels.Tooltip")]
 		[DefaultValue(true)]
 		public bool canMovePanels;
 
-		[Label("$Mods.MagicStorage.Config.automatonRemembers.Label")]
-		[Tooltip("$Mods.MagicStorage.Config.automatonRemembers.Tooltip")]
+		[LabelKey("$Mods.MagicStorage.Config.automatonRemembers.Label")]
+		[TooltipKey("$Mods.MagicStorage.Config.automatonRemembers.Tooltip")]
 		[DefaultValue(true)]
 		public bool automatonRemembers;
 
@@ -161,14 +161,14 @@ namespace MagicStorage {
 		public override ConfigScope Mode => ConfigScope.ClientSide;
 	}
 
-	[Label("$Mods.MagicStorage.Config.ServersideLabel")]
+	//[LabelKey("$Mods.MagicStorage.Config.ServersideLabel")]
 	public class MagicStorageServerConfig : ModConfig {
 		public override ConfigScope Mode => ConfigScope.ServerSide;
 
 		public static MagicStorageServerConfig Instance => ModContent.GetInstance<MagicStorageServerConfig>();
 
-		[Label("$Mods.MagicStorage.Config.AllowAutomatonToMoveIn.Label")]
-		[Tooltip("$Mods.MagicStorage.Config.AllowAutomatonToMoveIn.Tooltip")]
+		[LabelKey("$Mods.MagicStorage.Config.AllowAutomatonToMoveIn.Label")]
+		[TooltipKey("$Mods.MagicStorage.Config.AllowAutomatonToMoveIn.Tooltip")]
 		[DefaultValue(true)]
 		public bool allowAutomatonToMoveIn;
 
@@ -188,19 +188,19 @@ namespace MagicStorage {
 	/// <summary>
 	/// The config for beta builds.  Make sure to wrap uses of this class with <c>#if NETPLAY</c>
 	/// </summary>
-	[Label("$Mods.MagicStorage.Config.BetaLabel")]
+	[LabelKey("$Mods.MagicStorage.Config.BetaLabel")]
 	public class MagicStorageBetaConfig : ModConfig {
 		public override ConfigScope Mode => ConfigScope.ClientSide;
 
 		public static MagicStorageBetaConfig Instance => ModContent.GetInstance<MagicStorageBetaConfig>();
 
-		[Label("$Mods.MagicStorage.Config.PrintTextToChat.Label")]
-		[Tooltip("$Mods.MagicStorage.Config.PrintTextToChat.Tooltip")]
+		[LabelKey("$Mods.MagicStorage.Config.PrintTextToChat.Label")]
+		[TooltipKeyKey("$Mods.MagicStorage.Config.PrintTextToChat.Tooltip")]
 		[DefaultValue(false)]
 		public bool printTextToChat;
 
-		[Label("$Mods.MagicStorage.Config.ShowDebugPylonRangeAreas.Label")]
-		[Tooltip("$Mods.MagicStorage.Config.ShowDebugPylonRangeAreas.Tooltip")]
+		[LabelKey("$Mods.MagicStorage.Config.ShowDebugPylonRangeAreas.Label")]
+		[TooltipKey("$Mods.MagicStorage.Config.ShowDebugPylonRangeAreas.Tooltip")]
 		[DefaultValue(false)]
 		public bool showPylonAreas;
 

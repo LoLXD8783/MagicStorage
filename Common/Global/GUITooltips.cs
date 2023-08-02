@@ -52,15 +52,21 @@ namespace MagicStorage.Common.Global {
 		}
 
 		internal static IEnumerable<(string, string)> Sources(Item item) {
-			foreach (var instanced in item.Globals) {
-				GlobalItem gItem = instanced.Instance;
+			List<(string, string)> sources = new();
+			Enumerate(item, sources);
+			static void Enumerate(Item item, List<(string, string)> sources) {
+				foreach (var instanced in item.Globals) {
+					GlobalItem gItem = instanced.Instance(item);
 
-				TagCompound tag = new();
-				gItem.SaveData(item, tag);
+					TagCompound tag = new();
+					gItem.SaveData(item, tag);
 
-				if (tag.Count > 0)
-					yield return (gItem.Mod.Name + "/" + gItem.Name, ToBase64(tag));
+					if (tag.Count > 0)
+						sources.Add((gItem.Mod.Name + "/" + gItem.Name, ToBase64(tag)));
+					//yield return (gItem.Mod.Name + "/" + gItem.Name, ToBase64(tag));
+				}
 			}
+			return sources;
 		}
 
 		internal static string ToBase64(TagCompound tag) {

@@ -5,7 +5,7 @@ using SerousCommonLib.API;
 using System;
 using System.Reflection;
 using Terraria;
-using Terraria.Chest;
+using ILChest = Terraria.IL_Chest;
 using Terraria.ID;
 
 namespace MagicStorage.Edits {

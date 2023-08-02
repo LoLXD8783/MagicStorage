@@ -13,20 +13,20 @@ namespace MagicStorage.Edits {
 	internal class RecipeCheckingILEdit : Edit {
 		private static readonly MethodInfo RecipeLoader_AddRecipes = typeof(RecipeLoader).GetMethod("AddRecipes", BindingFlags.NonPublic | BindingFlags.Static);
 		private static event ILContext.Manipulator IL_RecipeLoader_AddRecipes {
-			add => HookEndpointManager.Modify<ILContext.Manipulator>(RecipeLoader_AddRecipes, value);
-			remove => HookEndpointManager.Unmodify<ILContext.Manipulator>(RecipeLoader_AddRecipes, value);
+			add => PortUtils.Modify<ILContext.Manipulator>(RecipeLoader_AddRecipes, value);
+			remove => PortUtils.Unmodify<ILContext.Manipulator>(RecipeLoader_AddRecipes, value);
 		}
 
 		private static readonly MethodInfo RecipeLoader_PostAddRecipes = typeof(RecipeLoader).GetMethod("PostAddRecipes", BindingFlags.NonPublic | BindingFlags.Static);
 		private static event ILContext.Manipulator IL_RecipeLoader_PostAddRecipes {
-			add => HookEndpointManager.Modify<ILContext.Manipulator>(RecipeLoader_PostAddRecipes, value);
-			remove => HookEndpointManager.Unmodify<ILContext.Manipulator>(RecipeLoader_PostAddRecipes, value);
+			add => PortUtils.Modify<ILContext.Manipulator>(RecipeLoader_PostAddRecipes, value);
+			remove => PortUtils.Unmodify<ILContext.Manipulator>(RecipeLoader_PostAddRecipes, value);
 		}
 
 		private static readonly MethodInfo RecipeLoader_PostSetupRecipes = typeof(RecipeLoader).GetMethod("PostSetupRecipes", BindingFlags.NonPublic | BindingFlags.Static);
 		private static event ILContext.Manipulator IL_RecipeLoader_PostSetupRecipes {
-			add => HookEndpointManager.Modify<ILContext.Manipulator>(RecipeLoader_PostSetupRecipes, value);
-			remove => HookEndpointManager.Unmodify<ILContext.Manipulator>(RecipeLoader_PostSetupRecipes, value);
+			add => PortUtils.Modify<ILContext.Manipulator>(RecipeLoader_PostSetupRecipes, value);
+			remove => PortUtils.Unmodify<ILContext.Manipulator>(RecipeLoader_PostSetupRecipes, value);
 		}
 
 		public override void LoadEdits() {

@@ -672,7 +672,8 @@ namespace MagicStorage.Components
 			}
 		}
 
-		internal static readonly FieldInfo Item_globalItems = typeof(Item).GetField("globalItems", BindingFlags.NonPublic | BindingFlags.Instance);
+		//internal static readonly FieldInfo Item_globalItems = typeof(Item).GetField("globalItems", BindingFlags.NonPublic | BindingFlags.Instance);
+		internal static readonly FieldInfo Item_globals = typeof(Item).GetField("_globals", BindingFlags.NonPublic | BindingFlags.Instance);
 
 		internal void DestroyUnloadedGlobalItemData(bool net = false) {
 			if (!net && Main.netMode == NetmodeID.MultiplayerClient) {
@@ -691,13 +692,13 @@ namespace MagicStorage.Components
 					if (item is null || item.IsAir || item.ModItem is UnloadedItem)
 						continue;
 
-					if (Item_globalItems.GetValue(item) is not Instanced<GlobalItem>[] globalItems || globalItems.Length == 0)
+					if (Item_globals.GetValue(item) is not GlobalItem[] globalItems || globalItems.Length == 0)
 						continue;
 
-					Instanced<GlobalItem>[] array = globalItems.Where(i => i.Instance is not UnloadedGlobalItem).ToArray();
+					GlobalItem[] array = globalItems.Where(i => i.Instance(item) is not UnloadedGlobalItem).ToArray();
 
 					if (array.Length != globalItems.Length) {
-						Item_globalItems.SetValue(item, array);
+						Item_globals.SetValue(item, array);
 						didSomething = true;
 
 						typesToRefresh.Add(item.type);

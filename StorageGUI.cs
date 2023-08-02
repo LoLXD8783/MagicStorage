@@ -634,7 +634,7 @@ namespace MagicStorage
 			if (item is null || item.IsAir || item.ModItem is UnloadedItem)
 				return;
 
-			if (TEStorageHeart.Item_globalItems.GetValue(item) is not Instanced<GlobalItem>[] globalItems || globalItems.Length == 0)
+			if (TEStorageHeart.Item_globals.GetValue(item) is not GlobalItem[] globalItems || globalItems.Length == 0)
 				return;
 
 			//Create the data
@@ -649,7 +649,7 @@ namespace MagicStorage
 			if (item.TryGetGlobalItem(out UnloadedGlobalItem obj))
 				(UnloadedGlobalItem_data.GetValue(obj) as IList<TagCompound>).Add(modData);
 			else {
-				Instanced<GlobalItem>[] array = (Instanced<GlobalItem>[])globalItems.Clone();
+				GlobalItem[] array = (GlobalItem[])globalItems.Clone();
 				int index = array.Length;
 
 				Array.Resize(ref array, array.Length + 1);
@@ -659,9 +659,10 @@ namespace MagicStorage
 
 				UnloadedGlobalItem_data.SetValue(obj, new List<TagCompound>() { modData });
 
-				array[^1] = new((ushort)index, obj);
+				array[1] = obj;
+				//array[^1] = new((ushort)index, obj);
 
-				TEStorageHeart.Item_globalItems.SetValue(item, array);
+				TEStorageHeart.Item_globals.SetValue(item, array);
 			}
 		}
 

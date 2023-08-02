@@ -50,7 +50,7 @@ namespace MagicStorage.CrossMod {
 		/// Automatically sets certain static defaults. Override this if you do not want the properties to be set for you.
 		/// </summary>
 		public virtual void AutoStaticDefaults() {
-			if (Tooltip.IsDefault())
+			// if (Tooltip.IsDefault())
 				// Tooltip.SetDefault(Regex.Replace(Name, "([A-Z])", " $1").Trim());
 		}
 

@@ -979,7 +979,7 @@ namespace MagicStorage
 					Item clonedItem = createItem.Clone();
 
 					for (int i = 0; i < batches; i++) {
-						RecipeLoader.OnCraft(clonedItem, context.recipe, consumedItems);
+						RecipeLoader.OnCraft(clonedItem, context.recipe, consumedItems, new Item());
 
 						foreach (EnvironmentModule module in modules)
 							module.OnConsumeItemsForRecipe(sandbox, context.recipe, consumedItems);
@@ -1797,7 +1797,7 @@ namespace MagicStorage
 
 				var consumed = context.ConsumedItems.ToList();
 
-				RecipeLoader.OnCraft(resultItem, selectedRecipe, consumed);
+				RecipeLoader.OnCraft(resultItem, selectedRecipe, consumed, new Item());
 
 				foreach (EnvironmentModule module in context.modules)
 					module.OnConsumeItemsForRecipe(context.sandbox, selectedRecipe, consumed);
@@ -1890,7 +1890,8 @@ namespace MagicStorage
 
 				var consumed = context.ConsumedItems.ToList();
 
-				RecipeLoader.OnCraft(resultItem, selectedRecipe, consumed);
+				// TODO: new Item()??
+				RecipeLoader.OnCraft(resultItem, selectedRecipe, consumed, new Item());
 
 				foreach (EnvironmentModule module in context.modules)
 					module.OnConsumeItemsForRecipe(context.sandbox, selectedRecipe, consumed);
